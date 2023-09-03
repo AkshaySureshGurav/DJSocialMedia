@@ -1,0 +1,71 @@
+
+{% if posts %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+      <li class="page-item {% if not havePreviousPage %}disabled{% endif %}">
+        <a class="page-link" href="
+        {% if havePreviousPage %}
+          {% if page == 'following' %}
+            {% url 'following' pageNumber=posts.previous_page_number %}
+          {% elif page == 'profilePage' %}
+            {% url 'profile' userId=creatorID pagenumber=posts.previous_page_number %}
+          {% else %}
+            {% url 'index' pageNum=posts.previous_page_number %}
+          {% endif %}
+        {% endif %}"
+         aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      {% if havePreviousPage %}
+      <li class="page-item"><a class="page-link" href="
+        {% if page == 'following' %}
+          {% url 'following' pageNumber=posts.previous_page_number %}
+        {% elif page == 'profilePage' %}
+          {% url 'profile' userId=creatorID pagenumber=posts.previous_page_number %}
+        {% else %}
+          {% url 'index' pageNum=posts.previous_page_number %}
+        {% endif %}
+      ">{{posts.previous_page_number}}</a></li>
+      {% endif %}
+      <li class="page-item active"><a class="page-link" href="
+        {% if page == 'following' %}
+          {% url 'following' pageNumber=currentPage %}
+        {% elif page == 'profilePage' %}
+          {% url 'profile' userId=creatorID pagenumber=currentPage %}
+        {% else %}
+          {% url 'index' pageNum=currentPage %}
+        {% endif %}
+        ">{{currentPage}}</a></li>
+      {% if haveNextPage %}
+      <li class="page-item"><a class="page-link" href="
+        {% if page == 'following' %}
+          {% url 'following' pageNumber=posts.next_page_number %}
+        {% elif page == 'profilePage' %}
+          {% url 'profile' userId=creatorID pagenumber=posts.next_page_number %}
+        {% else %}
+          {% url 'index' pageNum=posts.next_page_number %}
+        {% endif %}
+        ">{{posts.next_page_number}}</a></li>
+      {% endif %}
+      <li class="page-item {% if not haveNextPage %}disabled{% endif %}">
+        <a class="page-link" href="
+            {% if haveNextPage %}
+              {% if page == 'following' %}
+                {% url 'following' pageNumber=posts.next_page_number %}
+              {% elif page == 'profilePage' %}
+                {% url 'profile' userId=creatorID pagenumber=posts.next_page_number %}
+              {% else %}
+                {% url 'index' pageNum=posts.next_page_number %}
+              {% endif %}
+            {% else %}
+              #
+            {%endif%}
+          " aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+    <p style="text-align: center;">{{posts}}</p>
+  </nav>
+{% endif %}

@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+    font-size: 18px;
+}
+
+
+
+
+
+svg {
+    height: 1.25em;
+    width: 1.45em;
+}
+
+#postsHolder {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: 3vh 0;
+    margin: 2vh 0;
+}
+
+.post {
+    width: 85%;
+    border: 1px solid #d9ccec;
+    padding: 1vh;
+    min-height: 10vh;
+    box-shadow: rgba(217, 204, 236, 255) 0px 0.0625em 0.0625em, rgba(217, 204, 236, 255) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.post:hover {
+    box-shadow: none;
+}
+
+.post  p {
+    margin-bottom: 0.3em;
+}
+
+.postHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+input {
+    border-radius: 25px;
+    padding: 0.6vh 3vh;
+    text-align: center;
+}
+
+input[type="text"] {
+    min-width: 55%;
+}
+
+
+#newPostForm > input[type="submit"] {
+    background-color:#f2f0f6;
+}
+
+.postTimeStamp {
+    font-size: 0.75em;
+}
+
+.postPoster {
+    font-size: 1.05em;
+    font-weight: bold;
+}
+
+.postMessage {
+    text-align: center;
+    padding: 0 5vw;
+}
+
+.inlineChild > * {
+    display: inline;
+    color: black;
+}
+
+.inlineChild > p {
+   margin-right: 1vw;
+}
+
+
+#postAction button {
+    background-color: unset;
+    border: unset;
+}
+
+#postAction button:active {
+    /* background-color: unset; */
+    border: unset;
+}
+
+
+#navbarProfileLink > * {
+    display: block;
+}
+
+
+#symbolHolder {
+    height: 20vh;
+    width: 20vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d9ccec;
+    margin-top: 8vh;
+}
+
+
+#updateMessageForm > * {
+    display: block;
+}
+
+#newMessageSubmit {
+    transform: translateX(-50%);
+    margin-left: 50%;
+}
+
+#newMessageOfUser {
+    transform: translateX(-50%);
+    margin-left: 50%;
+    margin-bottom: 1vh;
+}
+
+@media screen and (max-width: 992px) {
+    #navbarSectionHolder {
+        justify-content: center;
+    }
+}
+
+.navbar-nav > * {
+    margin: 0 0.6vw;
+}
