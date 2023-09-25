@@ -2,17 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
-
 
 body {
-    font-size: 18px;
+    font-size: 17px;
 }
-
-
-
-
 
 svg {
     height: 1.25em;
@@ -25,7 +19,7 @@ svg {
     flex-flow: column;
     align-items: center;
     gap: 3vh 0;
-    margin: 2vh 0;
+    margin: 1.6vh 0 4vh 0;
 }
 
 .post {
@@ -33,7 +27,8 @@ svg {
     border: 1px solid #d9ccec;
     padding: 1vh;
     min-height: 10vh;
-    box-shadow: rgba(217, 204, 236, 255) 0px 0.0625em 0.0625em, rgba(217, 204, 236, 255) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    /* box-shadow: rgba(217, 204, 236, 255) 0px 0.0625em 0.0625em, rgba(217, 204, 236, 255) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; */
+    box-shadow: rgba(217, 204, 236, 255) 0px 1px 4px;
 }
 
 .post:hover {
@@ -142,6 +137,29 @@ input[type="text"] {
     }
 }
 
+
+@media screen and (max-width: 330px) {
+    #newPostForm > input[type="submit"] {
+        margin-top: 0.4vh;
+    }
+}
+
 .navbar-nav > * {
     margin: 0 0.6vw;
 }
+
+/* for updating the presets coming from bootstraps */
+.page-item.active .page-link {
+    background-color: #a589d2;
+    border-color: #a589d2;
+}
+
+.page-link {
+    color: #a589d2;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+/* end */
