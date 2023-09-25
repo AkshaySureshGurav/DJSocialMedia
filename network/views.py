@@ -230,7 +230,7 @@ def profile(request, userId, pagenumber=1):
 
                 return render(request, "network/profilePage.html", {
                     "page": "profilePage",
-                    "symbol": creator.username[0], 
+                    "symbol": creator.username[0].capitalize(), 
                     "username": creator.username,
                     "creatorID": creator.id,
                     "countOfFollowers": countOfFollowers,
@@ -245,7 +245,7 @@ def profile(request, userId, pagenumber=1):
         else:
             return render(request, "network/profilePage.html", {
                 "page": "profilePage",
-                "symbol": creator.username[0], 
+                "symbol": creator.username[0].capitalize(), 
                 "creatorID": creator.id,
                 "username": creator.username,
                 "countOfFollowers": countOfFollowers,
